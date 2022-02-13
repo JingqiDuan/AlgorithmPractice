@@ -9,6 +9,7 @@ class Solution {
         }
         return searchRow(matrix[row], target);
     }
+    //only through experimenting on draft
     private int findTheRow(int[][]matrix, int target){
         int left = -1, right = matrix.length - 1;
         while(left < right){
