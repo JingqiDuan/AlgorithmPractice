@@ -1,4 +1,42 @@
 class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix == null || matrix.length == 0){
+            return false;
+        }
+        int row = findTheRow(matrix, target);
+        if(row < 0){
+            return false;
+        }
+        return searchRow(matrix[row], target);
+    }
+    private int findTheRow(int[][]matrix, int target){
+        int left = -1, right = matrix.length - 1;
+        while(left < right){
+            int mid = left + (right - left + 1)/2;
+            if(matrix[mid][0] <= target){
+                left = mid;
+            }else{
+                right = right - 1;
+            }
+        }return left;
+    }
+    private boolean searchRow(int[] row, int target){
+        int left = 0, right = row.length - 1;
+        while(left <= right){
+            int mid = left + (right - left) / 2;
+            if(row[mid] < target){
+                left = mid + 1;
+            }else if(row[mid] == target){
+                return true;
+            }else{
+                right = mid - 1;
+            }
+        }
+        return false;
+    }
+}
+
+/*class Solution2 {
     public static boolean searchMatrix(int[][] matrix, int target) {
         if(matrix == null || matrix.length == 0){
             return false;
@@ -33,4 +71,6 @@ class Solution {
         }
         return false;
     }
-}
+}*/
+
+
