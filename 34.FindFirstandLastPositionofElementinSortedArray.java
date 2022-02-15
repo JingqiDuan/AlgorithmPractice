@@ -31,7 +31,7 @@ class Solution {
     private int findLastPosition(int[] nums, int target){
         int left = 0, right = nums.length -1;
         while(left < right){
-            //round up when calculate the mid for lastPo
+            //round up when calculate the mid for lastPosition
             int mid = left + (right - left +1)/2;
             if(nums[mid] < target){
                 left = mid + 1;
