@@ -18,7 +18,9 @@ class Solution {
                         List<List<Integer>> result){
         result.add(new ArrayList<Integer>(subset));
         for(int i = startIndex; i < nums.length; i ++){
-            if(i != 0 && nums[i] == nums[i - 1] && i != startIndex){//why i != startIndex
+            //staring to add nums[startIndex] to the subset, check following element which is 
+            //not nums[startIndex], compare that number with its previous one, their equalty means duplication
+            if(i != 0 && nums[i] == nums[i - 1] && i != startIndex){
                 continue;
             }
             subset.add(nums[i]);
