@@ -39,3 +39,19 @@ class Solution {
         return true;
     }
 }
+
+/*class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        return helper(root, root);
+    }
+    private boolean helper(TreeNode leftNode, TreeNode rightNode){
+        if(leftNode == null && rightNode == null){
+            return true;
+        }
+        if(leftNode == null || rightNode == null){
+            return false;
+        }
+        return leftNode.val == rightNode.val && helper(leftNode.left, rightNode.right) 
+                && helper(leftNode.right, rightNode.left);
+    }
+}*/
